@@ -30,6 +30,11 @@ version = module_version
 group = "com.mairwunnx.$module_id"
 archivesBaseName = module_name
 
+configurations {
+    embed
+    compile.extendsFrom(embed)
+}
+
 minecraft {
     mappings(
         channel: forge_mappings_channel_type,
@@ -101,9 +106,13 @@ dependencies {
         name: "ProjectEssentials-Cooldown",
         version: ess_cooldown_version
     )
+    compile("org.zeroturnaround:zt-zip:$zt_zip_version")
+    embed("org.zeroturnaround:zt-zip:$zt_zip_version")
 }
 
 jar {
+    from configurations.embed.collect { it.isDirectory() ? it : zipTree(it) }
+
     manifest {
         attributes([
             "Specification-Title"     : module_name,
