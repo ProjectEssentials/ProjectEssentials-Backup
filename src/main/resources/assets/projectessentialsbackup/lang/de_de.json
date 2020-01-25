@@ -1,0 +1,12 @@
+{
+  "project_essentials_spawn.spawn.reload.restricted": "§cDu §7bist nicht berechtigt §cum World-Spawn-Konfigurationen neu zu laden.",
+  "project_essentials_spawn.spawn.reload.success": "§6World-Spawn-Konfigurationen §7erfolgreich §6neu geladen.",
+  "project_essentials_spawn.spawn.version.restricted": "§cDu §7bist nicht berechtigt §cum die Version von Essentials Spawn einzusehen.",
+  "project_essentials_spawn.spawn.version.success": "§6%s\n§cVersion: §7%s\n§cMaintainer: §7%s\n§cForge Zielversion: §7%s\n§cMinecraft Zielversion: §7%s\n§cSource Code: §7%s§7\n§cTelegram Chat: §7%s",
+  "project_essentials_spawn.spawn.save.restricted": "§cDu §7bist nicht berechtigt §cum World-Spawn-Konfigurationen zu speichern.",
+  "project_essentials_spawn.spawn.save.success": "§6World-Spawn-Konfigurationen §7serfolgreich §6gespeichert.",
+  "project_essentials_spawn.spawn.restricted": "§cDu §7bist nicht berechtigt §cum um dich zum Spawn zu teleportieren.",
+  "project_essentials_spawn.spawn.success": "§6Zum Spawn teleportiert.",
+  "project_essentials_spawn.spawn.set.restricted": "§cYDu §7bist nicht berechtigt §cum einen neuen Spawn-Punkt zu setzen.",
+  "project_essentials_spawn.spawn.set.success": "§6Neuer §7Spawn-Punkt §6wurde gespeichert."
+}

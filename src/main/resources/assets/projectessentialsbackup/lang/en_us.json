@@ -1,0 +1,12 @@
+{
+  "project_essentials_spawn.spawn.reload.restricted": "§cYou §7don't have permission §cto reload world spawn configuration.",
+  "project_essentials_spawn.spawn.reload.success": "§6World spawn configuration §7successfully §6reloaded.",
+  "project_essentials_spawn.spawn.version.restricted": "§cYou §7don't have permission §cto see essentials spawn version.",
+  "project_essentials_spawn.spawn.version.success": "          §6%s\n§cVersion: §7%s\n§cMaintainer: §7%s\n§cTarget Forge version: §7%s\n§cTarget Minecraft version: §7%s\n§cSource code: §7%s§7\n§cTelegram chat: §7%s",
+  "project_essentials_spawn.spawn.save.restricted": "§cYou §7don't have permission §cto save world spawn configuration.",
+  "project_essentials_spawn.spawn.save.success": "§6World spawn configuration §7successfully §6saved.",
+  "project_essentials_spawn.spawn.restricted": "§cYou §7don't have permission §cto teleport to spawn.",
+  "project_essentials_spawn.spawn.success": "§6Teleported to spawn.",
+  "project_essentials_spawn.spawn.set.restricted": "§cYou §7don't have permission §cto set new spawn point.",
+  "project_essentials_spawn.spawn.set.success": "§6New §7spawn point §6has been saved."
+}

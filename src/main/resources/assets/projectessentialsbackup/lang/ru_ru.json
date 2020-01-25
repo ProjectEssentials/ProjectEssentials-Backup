@@ -1,0 +1,12 @@
+{
+  "project_essentials_spawn.spawn.reload.restricted": "§cУ вас §7нет прав §cна перезагрузку конфигурации спавна мира.",
+  "project_essentials_spawn.spawn.reload.success": "§6Конфигурация спавна мира §7успешно §6перезагружена.",
+  "project_essentials_spawn.spawn.version.restricted": "§cУ вас §7нет прав §cна просмотр версии essentials spawn.",
+  "project_essentials_spawn.spawn.version.success": "          §6%s\n§cВерсия: §7%s\n§cСопровождающий: §7%s\n§cНацеленная Forge версия: §7%s\n§cНацеленная Minecraft версия: §7%s\n§cИсходный код: §7%s§7\n§cTelegram чат: §7%s",
+  "project_essentials_spawn.spawn.save.restricted": "§cУ вас §7нет прав §cна сохранении конфигурации спавна мира.",
+  "project_essentials_spawn.spawn.save.success": "§6Конфигурация спавна мира §7успешно §6сохранена.",
+  "project_essentials_spawn.spawn.restricted": "§cУ вас §7нет прав §cна телепортацию к точке спавна.",
+  "project_essentials_spawn.spawn.success": "§6Вы телепортированы к точке спавна.",
+  "project_essentials_spawn.spawn.set.restricted": "§cУ вас §7нет прав §cна установку новой точки спавна.",
+  "project_essentials_spawn.spawn.set.success": "§6Новая §7точка спавна §6была установлена."
+}
