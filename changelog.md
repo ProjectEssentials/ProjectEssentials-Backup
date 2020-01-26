@@ -7,6 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.14.4-1.0.0] - 2020-01-27
+## [1.14.4-1.0.0] - 2020-01-26
 
 Initial release of Project Essentials Backup as Project Essentials part.
