@@ -104,6 +104,8 @@ object BackupController {
     private fun makeBackup(path: String) {
         val configuration = BackupConfigurationController.get()
 
+        EntryPoint.serverInstance.save(true, false, true)
+
         ZipUtil.pack(
             File(path),
             File(buildFilePathName(path)),
@@ -121,9 +123,9 @@ object BackupController {
 
         return if (path.contains(File.separator)) {
             val worldName = path.split(File.separator)[1]
-            backupDirectory + File.separator + worldName + currentDateTime + extension
+            backupDirectory + File.separator + worldName + "-" + currentDateTime + extension
         } else {
-            backupDirectory + File.separator + path + currentDateTime + extension
+            backupDirectory + File.separator + path + "-" + currentDateTime + extension
         }
     }
 }
