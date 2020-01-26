@@ -4,12 +4,14 @@ import com.mairwunnx.projectessentials.backup.configuration.BackupConfigurationC
 import kotlinx.coroutines.*
 import net.minecraftforge.api.distmarker.Dist
 import net.minecraftforge.fml.DistExecutor
+import org.apache.logging.log4j.LogManager
 import org.zeroturnaround.zip.ZipUtil
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
 object BackupController {
+    private val logger = LogManager.getLogger()
     private lateinit var job: Job
     var isFirstLaunch = true
 
@@ -104,13 +106,23 @@ object BackupController {
     private fun makeBackup(path: String) {
         val configuration = BackupConfigurationController.get()
 
-        EntryPoint.serverInstance.save(true, false, true)
+        runBlocking {
+            val savingJob = launch(Dispatchers.Default) {
+                EntryPoint.serverInstance.save(false, false, true)
+            }
+            savingJob.invokeOnCompletion {
+                val savingPath = buildFilePathName(path)
+                logger.info("Saving backup as $savingPath")
 
-        ZipUtil.pack(
-            File(path),
-            File(buildFilePathName(path)),
-            configuration.backupCompressionLevel
-        )
+                ZipUtil.pack(
+                    File(path),
+                    File(buildFilePathName(path)),
+                    configuration.backupCompressionLevel
+                )
+            }
+
+            savingJob.start()
+        }
     }
 
     private fun buildFilePathName(path: String): String {
