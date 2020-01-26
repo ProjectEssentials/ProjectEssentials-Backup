@@ -2,6 +2,8 @@
 
 ## God bless your server. Oh! i wanted to say: this mod makes backups of your world according to certain settings
 
+Lightweight additional module for Essentials. Just make server and client world backup by time or via command.
+
 ### Explore
 
 #### [Download mod](https://github.com/ProjectEssentials/ProjectEssentials-Backup/releases/download/v1.14.4-1.0.0/Project.Essentials.Backup-1.14.4-1.0.0.jar) · [Configuration](documentation/configuration.md) · [How to install](documentation/how-install.md) · [Troubleshooting](https://github.com/ProjectEssentials/ProjectEssentials-Backup/issues/new/choose) · [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ProjectEssentials-Backup) · [Change log](changelog.md)
