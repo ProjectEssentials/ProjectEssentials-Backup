@@ -16,6 +16,8 @@ object BackupController {
     var isFirstLaunch = true
 
     fun launchBackupLoop() {
+        logger.info("Initializing backup loop")
+
         job = GlobalScope.launch {
             while (isActive) {
                 backupLoop()
