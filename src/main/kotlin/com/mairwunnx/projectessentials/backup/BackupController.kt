@@ -63,7 +63,7 @@ object BackupController {
 
             DistExecutor.runWhenOn(Dist.DEDICATED_SERVER) {
                 Runnable {
-                    makeBackup(EntryPoint.serverInstance.worldName)
+                    makeBackup(EntryPoint.serverInstance.folderName)
                 }
             }
 
