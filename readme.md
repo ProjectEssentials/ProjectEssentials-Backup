@@ -6,11 +6,7 @@ Lightweight additional module for Essentials. Just make server and client world 
 
 ### Explore
 
-#### [Download mod](https://github.com/ProjectEssentials/ProjectEssentials-Backup/releases/download/v1.14.4-1.0.1/Project.Essentials.Backup-1.14.4-1.0.1.jar) · [Configuration](documentation/configuration.md) · [How to install](documentation/how-install.md) · [Troubleshooting](https://github.com/ProjectEssentials/ProjectEssentials-Backup/issues/new/choose) · [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ProjectEssentials-Backup) · [Change log](changelog.md)
-
-### Dependencies
-
-#### [Project Essentials Core](https://github.com/ProjectEssentials/ProjectEssentials-Core/releases)
+#### [Download mod](https://github.com/ProjectEssentials/ProjectEssentials-Backup/releases/download/v1.14.4-1.0.1/Project.Essentials.Backup-1.14.4-1.0.1.jar) · [Configuration](https://mairwunnx.gitbook.io/project-essentials/project-essentials-backup#configuration) · [How to install](https://mairwunnx.gitbook.io/project-essentials/project-essentials-backup#how-to-install) · [Troubleshooting](https://github.com/ProjectEssentials/ProjectEssentials-Backup/issues/new/choose) · [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ProjectEssentials-Backup) · [Change log](changelog.md)
 
 ### Compatibility
 
