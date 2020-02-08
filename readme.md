@@ -6,11 +6,11 @@ Lightweight additional module for Essentials. Just make server and client world 
 
 ### Explore
 
-#### [Download mod](https://github.com/ProjectEssentials/ProjectEssentials-Backup/releases/download/v1.14.4-1.0.1/Project.Essentials.Backup-1.14.4-1.0.1.jar) · [Configuration](https://mairwunnx.gitbook.io/project-essentials/project-essentials-backup#configuration) · [How to install](https://mairwunnx.gitbook.io/project-essentials/project-essentials-backup#how-to-install) · [Troubleshooting](https://github.com/ProjectEssentials/ProjectEssentials-Backup/issues/new/choose) · [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ProjectEssentials-Backup) · [Change log](changelog.md)
+#### [Download mod](https://github.com/ProjectEssentials/ProjectEssentials-Backup/releases/download/v1.15.2-1.0.0/Project.Essentials.Backup-1.15.2-1.0.0.jar) · [Configuration](https://mairwunnx.gitbook.io/project-essentials/project-essentials-backup#configuration) · [How to install](https://mairwunnx.gitbook.io/project-essentials/project-essentials-backup#how-to-install) · [Troubleshooting](https://github.com/ProjectEssentials/ProjectEssentials-Backup/issues/new/choose) · [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ProjectEssentials-Backup) · [Change log](changelog.md)
 
 ### Compatibility
 
-This mod branch supported forge version `28.0.X` and `28.1.X` (Minecraft `1.14.4`).
+This mod branch supported forge version `31.0.X` and `31.1.X` (Minecraft `1.15.2`).
 
 ### Credits
 
