@@ -1,10 +1,11 @@
 {
   "homepage": "https://github.com/ProjectEssentials/ProjectEssentials-Backup",
   "1.15.2": {
+    "1.15.2-1.0.1": " - Changelog for 1.15.2-1.0.1 https://github.com/ProjectEssentials/ProjectEssentials-Backup/blob/MC-1.15.2/changelog.md#1144-101---2020-03-18",
     "1.15.2-1.0.0": " - Changelog for 1.15.2-1.0.0 https://github.com/ProjectEssentials/ProjectEssentials-Backup/blob/MC-1.15.2/changelog.md#1144-100---2020-02-08"
   },
   "promos": {
-    "1.15.2-latest": "1.15.2-1.0.0",
-    "1.15.2-recommended": "1.15.2-1.0.0"
+    "1.15.2-latest": "1.15.2-1.0.1",
+    "1.15.2-recommended": "1.15.2-1.0.1"
   }
 }
