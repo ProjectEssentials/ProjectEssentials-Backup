@@ -16,7 +16,7 @@ class EntryPoint : EssBase() {
     private val logger = LogManager.getLogger()
 
     init {
-        modVersion = "1.14.4-1.0.1"
+        modVersion = "1.14.4-1.0.2"
         logBaseInfo()
         validateForgeVersion()
         MinecraftForge.EVENT_BUS.register(this)

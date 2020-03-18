@@ -4,7 +4,7 @@ issueTrackerURL="https://github.com/ProjectEssentials/ProjectEssentials-Backup/i
 
 [[mods]]
     modId="project_essentials_backup"
-    version="1.14.4-1.0.1"
+    version="1.14.4-1.0.2"
     displayName="Project Essentials Backup"
     updateJSONURL="https://raw.githubusercontent.com/ProjectEssentials/ProjectEssentials-Backup/MC-1.14.4/update.json"
     displayURL="https://github.com/ProjectEssentials/ProjectEssentials-Backup"
