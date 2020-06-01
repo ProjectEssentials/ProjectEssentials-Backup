@@ -1,5 +1,8 @@
 package com.mairwunnx.projectessentials.backup.configurations
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class BackupConfigurationModel(
     var backupEnabled: Boolean = true,
     var firstLaunchDelay: Boolean = true,
