@@ -8,7 +8,7 @@ issueTrackerURL="https://github.com/ProjectEssentials/ProjectEssentials-Backup/i
     displayName="Project Essentials Backup"
     updateJSONURL="https://raw.githubusercontent.com/ProjectEssentials/ProjectEssentials-Backup/MC-1.14.4/updatev2.json"
     displayURL="https://github.com/ProjectEssentials/ProjectEssentials-Backup"
-    credits="Thanks JetBrains for Intellij IDEA license!"
+    credits="hujle, JetBrains, all forge developers, and other contributors"
     authors="MairwunNx (Pavel Erokhin)"
     description='''
     Project Essentials Backup - additional module for Essentials;
