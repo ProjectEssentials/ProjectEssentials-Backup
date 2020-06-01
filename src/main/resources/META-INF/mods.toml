@@ -18,7 +18,7 @@ issueTrackerURL="https://github.com/ProjectEssentials/ProjectEssentials-Backup/i
 [[dependencies.projectessentialsbackup]]
     modId="project_essentials_core"
     mandatory=true
-    versionRange="[1,)"
+    versionRange="[2,)"
     ordering="NONE"
     side="BOTH"
 
