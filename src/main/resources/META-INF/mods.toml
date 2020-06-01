@@ -11,8 +11,8 @@ issueTrackerURL="https://github.com/ProjectEssentials/ProjectEssentials-Backup/i
     credits="hujle, JetBrains, all forge developers, and other contributors"
     authors="MairwunNx (Pavel Erokhin)"
     description='''
-    Project Essentials Backup - additional module for Essentials;
-    Just make server and client world backup by time or via command.
+    Lightweight module for controlling the backup of the game world
+    and configuration files on the server and in a single world.
     '''
 
 [[dependencies.projectessentialsbackup]]
