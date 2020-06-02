@@ -20,6 +20,11 @@ version = module_version
 group = "com.projectessentials.backup"
 archivesBaseName = module_name
 
+configurations {
+    internal
+    implementation.extendsFrom internal
+}
+
 minecraft {
     mappings channel: forge_mappings_channel_type, version: forge_mappings_channel_version
 }
@@ -44,10 +49,12 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$kotlinx_serialization_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-$kotlin_jdk_version_target:$kotlin_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_version"
-    implementation 'net.lingala.zip4j:zip4j:2.6.1'
+    internal 'net.lingala.zip4j:zip4j:2.6.1'
 }
 
 jar {
+    from configurations.internal.collect { it.isDirectory() ? it : zipTree(it) }
+
     manifest {
         attributes([
                 "Specification-Title"     : module_name,
