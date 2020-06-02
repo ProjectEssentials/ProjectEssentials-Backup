@@ -1,8 +1,11 @@
 package com.mairwunnx.projectessentials.backup.managers
 
 import com.mairwunnx.projectessentials.backup.configurations.BackupConfiguration
+import com.mairwunnx.projectessentials.core.api.v1.MESSAGE_MODULE_PREFIX
 import com.mairwunnx.projectessentials.core.api.v1.configuration.ConfigurationAPI.getConfigurationByName
 import com.mairwunnx.projectessentials.core.api.v1.extensions.empty
+import com.mairwunnx.projectessentials.core.api.v1.messaging.MessagingAPI
+import com.mairwunnx.projectessentials.core.api.v1.permissions.hasPermission
 import kotlinx.coroutines.*
 import net.minecraftforge.api.distmarker.Dist
 import net.minecraftforge.fml.DistExecutor
@@ -103,6 +106,7 @@ object BackupManager {
                             File(inPath), File(path), backupConfiguration.backupCompressionLevel
                         )
                     }.also { time -> logger.debug("Backup saved to $path for ${time / 1000} seconds") }
+                    notifyPlayer()
                 }
             }.start()
         }
@@ -123,5 +127,12 @@ object BackupManager {
         val ext = ".zip"
         val dateTime = SimpleDateFormat(backupConfiguration.backupDateFormat).format(Date())
         return file.absolutePath + File.separator + getCurrentServer().folderName + "-" + dateTime + ext
+    }
+
+    private fun notifyPlayer() {
+        if (!backupConfiguration.notifyPlayersAboutBackup) return
+        getCurrentServer().playerList.players.asSequence().filter {
+            hasPermission(it, "ess.backup.notify", 4)
+        }.forEach { MessagingAPI.sendMessage(it, "${MESSAGE_MODULE_PREFIX}backup.notify") }
     }
 }
