@@ -13,5 +13,8 @@ data class BackupConfigurationModel(
     var backupDateFormat: String = "yyyy-MM-dd_HH.mm.ss",
     var maxBackupFiles: Int = 10,
     var rollingBackupFilesEnabled: Boolean = true,
-    var removeExtraFiles: Boolean = true
+    var purgeBackupOutDirectory: Boolean = true,
+    var purgeExtensionsExceptions: List<String> = listOf(),
+    var purgeNamesExceptions: List<String> = listOf(),
+    var notifyPlayersAboutBackup: Boolean = false
 )
