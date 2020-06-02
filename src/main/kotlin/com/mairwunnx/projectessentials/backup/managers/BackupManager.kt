@@ -7,16 +7,19 @@ import com.mairwunnx.projectessentials.core.api.v1.extensions.empty
 import com.mairwunnx.projectessentials.core.api.v1.messaging.MessagingAPI
 import com.mairwunnx.projectessentials.core.api.v1.permissions.hasPermission
 import kotlinx.coroutines.*
+import net.lingala.zip4j.ZipFile
+import net.lingala.zip4j.model.ZipParameters
+import net.lingala.zip4j.model.enums.CompressionLevel
 import net.minecraftforge.api.distmarker.Dist
 import net.minecraftforge.fml.DistExecutor
 import net.minecraftforge.fml.server.ServerLifecycleHooks.getCurrentServer
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.MarkerManager
-import org.zeroturnaround.zip.ZipUtil
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.system.measureTimeMillis
+
 
 object BackupManager {
     private val logger = LogManager.getLogger()
@@ -102,9 +105,20 @@ object BackupManager {
                     val path = outPath(file).also { path -> logger.debug("Saving backup to $path") }
                     val inPath = inPath()
                     measureTimeMillis {
-                        ZipUtil.pack(
-                            File(inPath), File(path), backupConfiguration.backupCompressionLevel
-                        )
+                        ZipFile(path).addFolder(File(inPath), ZipParameters().apply {
+                            compressionLevel = CompressionLevel.values().find { lvl ->
+                                lvl.level == backupConfiguration.backupCompressionLevel
+                            }
+                            isIncludeRootFolder = true
+                        })
+                        if (backupConfiguration.backupConfigurations) {
+                            ZipFile(path).addFolder(File("config"), ZipParameters().apply {
+                                compressionLevel = CompressionLevel.values().find { lvl ->
+                                    lvl.level == backupConfiguration.backupCompressionLevel
+                                }
+                                isIncludeRootFolder = true
+                            })
+                        }
                     }.also { time -> logger.debug("Backup saved to $path for ${time / 1000} seconds") }
                     notifyPlayer()
                 }
