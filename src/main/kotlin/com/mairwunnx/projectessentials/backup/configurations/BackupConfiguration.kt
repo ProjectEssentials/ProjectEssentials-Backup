@@ -14,7 +14,7 @@ object BackupConfiguration : IConfiguration<BackupConfigurationModel> {
     override val name = "backup"
     override val version = 1
     override val configuration = take()
-    override val path = projectConfigDirectory + File.separator + "backup.json"
+    override val path = projectConfigDirectory + File.separator + "backup-settings.json"
 
     override fun load() {
         try {
