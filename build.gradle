@@ -44,7 +44,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$kotlinx_serialization_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-$kotlin_jdk_version_target:$kotlin_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_version"
-    implementation 'org.zeroturnaround:zt-zip:1.14'
+    implementation 'net.lingala.zip4j:zip4j:2.6.1'
 }
 
 jar {
