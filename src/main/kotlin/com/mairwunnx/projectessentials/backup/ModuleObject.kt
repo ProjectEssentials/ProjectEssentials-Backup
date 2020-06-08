@@ -35,27 +35,19 @@ class ModuleObject : IModule {
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     fun onServerStopping(it: FMLServerStoppingEvent) = BackupManager.terminate()
 
-    private fun sendLocalizationRequest() {
-        InterModComms.sendTo(
-            "project_essentials_core",
-            IMCLocalizationMessage
-        ) {
-            fun() = mutableListOf<String>(
-//                "/assets/projectessentialsbackup/lang/en_us.json",
-//                "/assets/projectessentialsbackup/lang/ru_ru.json"
-            )
-        }
+    private fun initProviders() {
+        listOf(
+            BackupConfiguration::class.java,
+            ModuleObject::class.java
+        ).forEach(ProviderAPI::addProvider)
     }
 
-    private fun sendProvidersRequest() {
-        InterModComms.sendTo(
-            "project_essentials_core",
-            IMCProvidersMessage
-        ) {
-            fun() = listOf(
-                BackupConfiguration::class.java,
-                ModuleObject::class.java
-            )
-        }
+    private fun initLocalization() {
+//        LocalizationAPI.apply(this.javaClass) {
+//            mutableListOf(
+//                "/assets/projectessentialsbackup/lang/en_us.json",
+//                "/assets/projectessentialsbackup/lang/ru_ru.json",
+//            )
+//        }
     }
 }
