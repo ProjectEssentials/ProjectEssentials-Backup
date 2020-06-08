@@ -81,7 +81,7 @@ object BackupManager {
         out.listFiles()!!.asSequence().filter {
             it.extension == "zip"
         }.also { files ->
-            if (files.count() > backupConfiguration.maxBackupFiles) {
+            if (files.count() >= backupConfiguration.maxBackupFiles) {
                 if (backupConfiguration.rollingBackupFilesEnabled) {
                     files.map { it.lastModified() }.sorted().take(
                         files.count() - backupConfiguration.maxBackupFiles
