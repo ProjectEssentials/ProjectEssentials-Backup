@@ -1,21 +1,16 @@
-# ![image](assets/backup_social.png)
+# ![image](https://github.com/ProjectEssentials/ProjectEssentials-Assets/raw/ASSETS-20-Q2/assets/specific/backup/header.png)
 
-## God bless your server. Oh! i wanted to say: this mod makes backups of your world according to certain settings
+### What is it?
 
-Lightweight additional module for Essentials. Just make server and client world backup by time or via command.
+A lightweight module for controlling the backup of the game world and configuration files on the server and in a single world.
 
 ### Explore
 
-#### [Download mod](https://github.com/ProjectEssentials/ProjectEssentials-Backup/releases/download/v1.14.4-1.0.2/Project.Essentials.Backup-1.14.4-1.0.2.jar) · [Configuration](https://mairwunnx.gitbook.io/project-essentials/project-essentials-backup#configuration) · [How to install](https://mairwunnx.gitbook.io/project-essentials/project-essentials-backup#how-to-install) · [Troubleshooting](https://github.com/ProjectEssentials/ProjectEssentials-Backup/issues/new/choose) · [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ProjectEssentials-Backup) · [Change log](changelog.md)
+#### [Download mod](https://github.com/ProjectEssentials/ProjectEssentials-Backup/releases/download/2.0.0%2BMC-1.14.4/Project.Essentials.Backup-2.0.0+MC-1.14.4.jar) · [User guide](https://mairwunnx.gitbook.io/project-essentials/project-essentials-backup#how-to-install) · [Troubleshooting](https://github.com/ProjectEssentials/ProjectEssentials-Backup/issues/new/choose) · [Telegram](https://t.me/minecraftforge) · [Discord](https://discord.gg/VU9XZAt) · [Change log](https://github.com/ProjectEssentials/ProjectEssentials-Backup/blob/master/changelog.md)
 
-### Compatibility
-
-This mod branch supported forge version `28.0.X` and `28.1.X` (Minecraft `1.14.4`).
+[![](https://github.com/ProjectEssentials/ProjectEssentials-Assets/raw/ASSETS-20-Q2/assets/common/support.png)](https://gist.github.com/MairwunNx/fda95062618db6880ef8ee06e1bba54f)
 
 ### Credits
 
-- Author: Pavel Erokhin [@mairwunnx](https://github.com/mairwunnx)
-- [JetBrains](https://www.jetbrains.com/) for Licenses 🥰
-- And you for contibuting and using it 😊🤗
-
-[![image](https://github.com/ProjectEssentials/ProjectEssentials-Core/raw/MC-1.14.4/assets/support_social.png)](https://ko-fi.com/mairwunnx)
+- `hujle` for testing this mod and almost all modules in production
+- [JetBrains](https://www.jetbrains.com/) for product licenses
