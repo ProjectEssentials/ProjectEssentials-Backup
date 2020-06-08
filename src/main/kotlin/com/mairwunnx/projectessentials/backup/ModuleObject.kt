@@ -26,13 +26,7 @@ class ModuleObject : IModule {
     override fun init() = Unit
 
     init {
-        EVENT_BUS.register(this)
-        subscribeOn<InterModEnqueueEventData>(
-            ForgeEventType.EnqueueIMCEvent
-        ) {
-            sendLocalizationRequest()
-            sendProvidersRequest()
-        }
+        EVENT_BUS.register(this).also { initProviders().also { initLocalization() } }
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
