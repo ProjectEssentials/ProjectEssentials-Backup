@@ -33,7 +33,7 @@ object BackupConfiguration : IConfiguration<BackupConfigurationModel> {
 
         logger.info("Saving configuration `${name}`")
         val raw = jsonInstance.stringify(
-            BackupConfigurationModel.serializer(), configuration
+            BackupConfigurationModel.serializer(), configurationData
         )
         try {
             File(path).writeText(raw)
