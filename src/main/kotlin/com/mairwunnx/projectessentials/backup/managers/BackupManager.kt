@@ -1,5 +1,6 @@
 package com.mairwunnx.projectessentials.backup.managers
 
+import com.mairwunnx.projectessentials.backup.ServerThreadWorker
 import com.mairwunnx.projectessentials.backup.configurations.BackupConfiguration
 import com.mairwunnx.projectessentials.core.api.v1.MESSAGE_MODULE_PREFIX
 import com.mairwunnx.projectessentials.core.api.v1.configuration.ConfigurationAPI.getConfigurationByName
@@ -94,35 +95,27 @@ object BackupManager {
 
     private fun compile(file: File) {
         runBlocking {
-            launch(Dispatchers.Default) {
-                try {
-                    getCurrentServer().save(false, true, true)
-                } catch (ex: ConcurrentModificationException) {
-                    logger.error("Saving server world failed, backup will pack probably outdated data!")
-                }
-            }.also {
-                it.invokeOnCompletion {
-                    val path = outPath(file).also { path -> logger.debug("Saving backup to $path") }
-                    val inPath = inPath()
-                    measureTimeMillis {
-                        ZipFile(path).addFolder(File(inPath), ZipParameters().apply {
+            ServerThreadWorker.execute(Runnable { getCurrentServer().save(false, true, true) }) {
+                val path = outPath(file).also { path -> logger.debug("Saving backup to $path") }
+                val inPath = inPath()
+                measureTimeMillis {
+                    ZipFile(path).addFolder(File(inPath), ZipParameters().apply {
+                        compressionLevel = CompressionLevel.values().find { lvl ->
+                            lvl.level == backupConfiguration.backupCompressionLevel
+                        }
+                        isIncludeRootFolder = true
+                    })
+                    if (backupConfiguration.backupConfigurations) {
+                        ZipFile(path).addFolder(File("config"), ZipParameters().apply {
                             compressionLevel = CompressionLevel.values().find { lvl ->
                                 lvl.level == backupConfiguration.backupCompressionLevel
                             }
                             isIncludeRootFolder = true
                         })
-                        if (backupConfiguration.backupConfigurations) {
-                            ZipFile(path).addFolder(File("config"), ZipParameters().apply {
-                                compressionLevel = CompressionLevel.values().find { lvl ->
-                                    lvl.level == backupConfiguration.backupCompressionLevel
-                                }
-                                isIncludeRootFolder = true
-                            })
-                        }
-                    }.also { time -> logger.debug("Backup saved to $path for ${time / 1000} seconds") }
-                    notifyPlayer()
-                }
-            }.start()
+                    }
+                }.also { time -> logger.debug("Backup saved to $path for ${time * 0.001} seconds") }
+                notifyPlayer()
+            }
         }
     }
 
