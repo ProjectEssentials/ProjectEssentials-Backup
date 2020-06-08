@@ -30,14 +30,10 @@ class ModuleObject : IModule {
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
-    fun onServerStarting(event: FMLServerStartingEvent) {
-        BackupManager::initialize
-    }
+    fun onServerStarting(event: FMLServerStartingEvent) = BackupManager.initialize()
 
-    @SubscribeEvent
-    fun onServerStopping(it: FMLServerStoppingEvent) {
-        BackupManager::terminate
-    }
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    fun onServerStopping(it: FMLServerStoppingEvent) = BackupManager.terminate()
 
     private fun sendLocalizationRequest() {
         InterModComms.sendTo(
