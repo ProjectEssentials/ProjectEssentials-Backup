@@ -56,7 +56,7 @@ object BackupManager {
 
             File(backupConfiguration.backupDirectoryPath).also { it.mkdirs() }.let {
                 purge(it).run { rotate(it) }.run { compile(it) }
-            }
+            }.also { delay(backupConfiguration.backupCreationDelay * 1000L) }
         } else {
             logger.debug(marker, "Backup loop was aborted with configuration").also { terminate() }
         }
