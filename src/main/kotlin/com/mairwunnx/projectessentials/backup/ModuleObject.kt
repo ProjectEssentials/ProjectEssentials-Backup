@@ -22,7 +22,7 @@ import net.minecraftforge.fml.event.server.FMLServerStoppingEvent
 class ModuleObject : IModule {
     override val name = this::class.java.`package`.implementationTitle.split(" ").last()
     override val version = this::class.java.`package`.implementationVersion!!
-    override val loadIndex = 4
+    override val loadIndex = 6
     override fun init() = Unit
 
     init {
