@@ -3,6 +3,7 @@ package com.mairwunnx.projectessentials.backup.managers
 import com.mairwunnx.projectessentials.backup.ServerThreadWorker
 import com.mairwunnx.projectessentials.backup.configurations.BackupConfiguration
 import com.mairwunnx.projectessentials.core.api.v1.MESSAGE_MODULE_PREFIX
+import com.mairwunnx.projectessentials.core.api.v1.configuration.ConfigurationAPI
 import com.mairwunnx.projectessentials.core.api.v1.configuration.ConfigurationAPI.getConfigurationByName
 import com.mairwunnx.projectessentials.core.api.v1.extensions.empty
 import com.mairwunnx.projectessentials.core.api.v1.messaging.MessagingAPI
@@ -95,7 +96,15 @@ object BackupManager {
 
     private fun compile(file: File) {
         runBlocking {
-            ServerThreadWorker.execute(Runnable { getCurrentServer().save(false, true, true) }) {
+            ServerThreadWorker.execute(
+                Runnable {
+                    getCurrentServer().let {
+                        it.playerList.saveAllPlayerData()
+                        it.save(false, true, true)
+                        if (backupConfiguration.backupConfigurations) ConfigurationAPI.saveAll()
+                    }
+                }
+            ) {
                 val path = outPath(file).also { path -> logger.debug("Saving backup to $path") }
                 val inPath = inPath()
                 measureTimeMillis {
