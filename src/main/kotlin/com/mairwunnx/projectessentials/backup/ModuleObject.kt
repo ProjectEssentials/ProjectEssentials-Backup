@@ -6,6 +6,7 @@ import com.mairwunnx.projectessentials.backup.commands.BackupCommand
 import com.mairwunnx.projectessentials.backup.commands.ConfigureBackupCommand
 import com.mairwunnx.projectessentials.backup.configurations.BackupConfiguration
 import com.mairwunnx.projectessentials.backup.managers.BackupManager
+import com.mairwunnx.projectessentials.core.api.v1.localization.LocalizationAPI
 import com.mairwunnx.projectessentials.core.api.v1.module.IModule
 import com.mairwunnx.projectessentials.core.api.v1.providers.ProviderAPI
 import net.minecraftforge.common.MinecraftForge.EVENT_BUS
@@ -42,11 +43,11 @@ class ModuleObject : IModule {
     }
 
     private fun initLocalization() {
-//        LocalizationAPI.apply(this.javaClass) {
-//            mutableListOf(
-//                "/assets/projectessentialsbackup/lang/en_us.json",
-//                "/assets/projectessentialsbackup/lang/ru_ru.json",
-//            )
-//        }
+        LocalizationAPI.apply(this.javaClass) {
+            mutableListOf(
+                "/assets/projectessentialsbackup/lang/en_us.json",
+                "/assets/projectessentialsbackup/lang/ru_ru.json"
+            )
+        }
     }
 }
