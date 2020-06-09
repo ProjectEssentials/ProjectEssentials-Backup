@@ -1,6 +1,5 @@
 package com.mairwunnx.projectessentials.backup.managers
 
-import com.mairwunnx.projectessentials.backup.ServerThreadWorker
 import com.mairwunnx.projectessentials.backup.configurations.BackupConfiguration
 import com.mairwunnx.projectessentials.core.api.v1.MESSAGE_MODULE_PREFIX
 import com.mairwunnx.projectessentials.core.api.v1.configuration.ConfigurationAPI
@@ -94,39 +93,37 @@ object BackupManager {
         }
     }
 
-    private fun compile(file: File) {
-        runBlocking {
-            ServerThreadWorker.execute(
-                Runnable {
-                    getCurrentServer().let {
-                        it.playerList.saveAllPlayerData()
-                        it.save(false, true, true)
-                        if (backupConfiguration.backupConfigurations) ConfigurationAPI.saveAll()
-                    }
-                }
-            ) {
-                val path = outPath(file).also { path -> logger.debug("Saving backup to $path") }
-                val inPath = inPath()
-                measureTimeMillis {
-                    ZipFile(path).addFolder(File(inPath), ZipParameters().apply {
-                        compressionLevel = CompressionLevel.values().find { lvl ->
-                            lvl.level == backupConfiguration.backupCompressionLevel
-                        }
-                        isIncludeRootFolder = true
-                    })
-                    if (backupConfiguration.backupConfigurations) {
-                        ZipFile(path).addFolder(File("config"), ZipParameters().apply {
+    private fun compile(file: File) = runBlocking {
+        getCurrentServer().runAsync {
+            getCurrentServer().let { server ->
+                server.playerList.saveAllPlayerData()
+                server.save(false, true, true)
+                if (backupConfiguration.backupConfigurations) ConfigurationAPI.saveAll()
+                CoroutineScope(Dispatchers.Default).launch(Dispatchers.Default) {
+                    val path = outPath(file).also { logger.debug("Saving backup to $it") }
+                    val inPath = inPath()
+                    measureTimeMillis {
+                        ZipFile(path).addFolder(File(inPath), ZipParameters().apply {
                             compressionLevel = CompressionLevel.values().find { lvl ->
                                 lvl.level == backupConfiguration.backupCompressionLevel
                             }
                             isIncludeRootFolder = true
                         })
-                    }
-                }.also { time -> logger.debug("Backup saved to $path for ${time * 0.001} seconds") }
-                notifyPlayer()
+                        if (backupConfiguration.backupConfigurations) {
+                            ZipFile(path).addFolder(File("config"), ZipParameters().apply {
+                                compressionLevel = CompressionLevel.values().find { lvl ->
+                                    lvl.level == backupConfiguration.backupCompressionLevel
+                                }
+                                isIncludeRootFolder = true
+                            })
+                        }
+                    }.also { time -> logger.info("Backup saved to $path for ${time * 0.001} seconds") }
+                    notifyPlayer()
+                }.start()
             }
         }
     }
+
 
     private fun inPath(): String {
         var path = String.empty
