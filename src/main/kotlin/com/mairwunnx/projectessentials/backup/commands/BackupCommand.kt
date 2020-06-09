@@ -49,7 +49,7 @@ object BackupCommand : CommandBase(backupLiteral, false) {
 
     fun on(context: CommandContext<CommandSource>) = 0.also {
         validateAndExecute(context, "ess.backup.on", 4) { isServer ->
-            BackupManager.shutdown().run {
+            BackupManager.initialize().run {
                 if (isServer) {
                     ServerMessagingAPI.response { "Backup cycle was launched." }
                 } else out(context.getPlayer()!!, "on")
