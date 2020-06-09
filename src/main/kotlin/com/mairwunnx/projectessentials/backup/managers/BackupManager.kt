@@ -19,6 +19,7 @@ import org.apache.logging.log4j.MarkerManager
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.concurrent.CompletableFuture
 import kotlin.system.measureTimeMillis
 
 
@@ -63,7 +64,7 @@ object BackupManager {
         }
     }
 
-    private fun purge(out: File) {
+    fun purge(out: File) {
         if (backupConfiguration.purgeBackupOutDirectory) {
             logger.debug(marker, "Purging backup out directory")
             // @formatter:off
@@ -76,7 +77,7 @@ object BackupManager {
         } else logger.debug(marker, "Purging backup out directory skipped")
     }
 
-    private fun rotate(out: File) {
+    fun rotate(out: File) {
         logger.debug(marker, "Starting rolling old backup files")
         out.listFiles()!!.asSequence().filter {
             it.extension == "zip"
@@ -93,7 +94,7 @@ object BackupManager {
         }
     }
 
-    private fun compile(file: File) = runBlocking {
+    fun compile(file: File): CompletableFuture<Void> = runBlocking {
         getCurrentServer().runAsync {
             getCurrentServer().let { server ->
                 server.playerList.saveAllPlayerData()
