@@ -99,7 +99,7 @@ object BackupManager {
                 server.playerList.saveAllPlayerData()
                 server.save(false, true, true)
                 if (backupConfiguration.backupConfigurations) ConfigurationAPI.saveAll()
-                CoroutineScope(Dispatchers.Default).launch(Dispatchers.Default) {
+                CoroutineScope(Dispatchers.Default).launch {
                     val path = outPath(file).also { logger.debug("Saving backup to $it") }
                     val inPath = inPath()
                     measureTimeMillis {
