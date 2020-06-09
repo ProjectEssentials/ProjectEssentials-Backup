@@ -42,8 +42,10 @@ object BackupManager {
         }
     }
 
+    fun shutdown() = logger.debug(marker, "Shutting down backup loop").also { job.cancel() }
+
     fun terminate() = logger.debug(marker, "Terminating backup loop").also {
-        job.cancel().also { firstLaunch = true }
+        shutdown().also { firstLaunch = true }
     }
 
     private suspend fun loop() {
