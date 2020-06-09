@@ -7,7 +7,6 @@ import com.mairwunnx.projectessentials.backup.managers.BackupManager
 import com.mairwunnx.projectessentials.core.api.v1.module.IModule
 import com.mairwunnx.projectessentials.core.api.v1.providers.ProviderAPI
 import net.minecraftforge.common.MinecraftForge.EVENT_BUS
-import net.minecraftforge.event.TickEvent
 import net.minecraftforge.eventbus.api.EventPriority
 import net.minecraftforge.eventbus.api.SubscribeEvent
 import net.minecraftforge.fml.common.Mod
@@ -26,15 +25,10 @@ class ModuleObject : IModule {
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
-    fun onServerStarting(event: FMLServerStartingEvent) =
-        BackupManager.initialize().also { ServerThreadWorker.refresh() }
+    fun onServerStarting(event: FMLServerStartingEvent) = BackupManager.initialize()
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
-    fun onServerStopping(it: FMLServerStoppingEvent) =
-        BackupManager.terminate().also { ServerThreadWorker.refresh() }
-
-    @SubscribeEvent(priority = EventPriority.LOWEST)
-    fun onServerTick(it: TickEvent.ServerTickEvent) = ServerThreadWorker.handle()
+    fun onServerStopping(it: FMLServerStoppingEvent) = BackupManager.terminate()
 
     private fun initProviders() {
         listOf(
