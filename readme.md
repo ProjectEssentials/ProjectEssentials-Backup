@@ -14,3 +14,5 @@ A lightweight module for controlling the backup of the game world and configurat
 
 - `hujle` for testing this mod and almost all modules in production
 - [JetBrains](https://www.jetbrains.com/) for product licenses
+
+### Inspired by: AromaBackup
