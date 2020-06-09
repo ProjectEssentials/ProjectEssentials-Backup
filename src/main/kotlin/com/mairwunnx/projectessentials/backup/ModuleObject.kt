@@ -3,6 +3,7 @@
 package com.mairwunnx.projectessentials.backup
 
 import com.mairwunnx.projectessentials.backup.commands.BackupCommand
+import com.mairwunnx.projectessentials.backup.commands.ConfigureBackupCommand
 import com.mairwunnx.projectessentials.backup.configurations.BackupConfiguration
 import com.mairwunnx.projectessentials.backup.managers.BackupManager
 import com.mairwunnx.projectessentials.core.api.v1.module.IModule
@@ -34,6 +35,7 @@ class ModuleObject : IModule {
     private fun initProviders() {
         listOf(
             BackupCommand::class.java,
+            ConfigureBackupCommand::class.java,
             BackupConfiguration::class.java,
             ModuleObject::class.java
         ).forEach(ProviderAPI::addProvider)
