@@ -1,0 +1,7 @@
+{
+  "project_essentials_backup.restricted": "§cYou §7don't have permission §cto use this command.",
+  "project_essentials_backup.notify": "§7§oBackup of the game world and server configurations is done.",
+  "project_essentials_backup.now.success": "§6Backup created successfully.",
+  "project_essentials_backup.off.success": "§4Backup cycle was stopped.",
+  "project_essentials_backup.on.success": "§2Backup cycle was launched."
+}

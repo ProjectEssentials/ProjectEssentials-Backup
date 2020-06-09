@@ -1,23 +1,21 @@
-## Pull Request template
-Please, go through these steps before you submit a PR.
+## Description
 
-1. Make sure that your PR is not a duplicate.
-2. If not, then make sure that:
+Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context. List any dependencies that are required for this change.
 
-    a. You have done your changes in a separate branch. Branches MUST have descriptive names that start with either the `fix/` or `feature/` prefixes. Good examples are: `fix/signin-issue` or `feature/issue-templates`.
+Fixes # (issue)
 
-    b. You have a descriptive commit message with a short title (first line).
+# How Has This Been Tested?
 
-    c. You have only one commit (if not, squash them into one commit).
+Please describe the tests that you ran to verify your changes. Please also note any relevant details for your test configuration.
 
-3. **After** these steps, you're ready to open a pull request.
+- [ ] Test A
+- [ ] Test B
 
-    a. Your pull request MUST NOT target the `master` branch on this repository. You probably want to target `staging` instead.
+# Checklist:
 
-    b. Give a descriptive title to your PR.
-
-    c. Provide a description of your changes.
-
-    d. Put `closes #XXXX` in your comment to auto-close the issue that your PR fixes (if such).
-
-**PLEASE REMOVE THIS TEMPLATE BEFORE SUBMITTING**
+- [ ] My code follows the style guidelines of this project
+- [ ] I have performed a self-review of my own code
+- [ ] I have commented my code, particularly in hard-to-understand areas
+- [ ] I have made corresponding changes to the documentation
+- [ ] My changes generate no new warnings
+- [ ] Any dependent changes have been merged and published in downstream modules

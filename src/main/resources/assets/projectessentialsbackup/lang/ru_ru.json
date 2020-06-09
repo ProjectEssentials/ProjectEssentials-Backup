@@ -1,0 +1,7 @@
+{
+  "project_essentials_backup.restricted": "§cУ вас §7нет прав §cчтобы использовать эту команду.",
+  "project_essentials_backup.notify": "§7§oРезервное копирование игровой мира и конфигураций сервера завершено.",
+  "project_essentials_backup.now.success": "§6Резервное копирование завершено.",
+  "project_essentials_backup.off.success": "§4Цикл резервного копирования принудительно остановлен.",
+  "project_essentials_backup.on.success": "§2Цикл резервного копирования был запущен."
+}

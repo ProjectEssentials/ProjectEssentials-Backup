@@ -4,21 +4,21 @@ issueTrackerURL="https://github.com/ProjectEssentials/ProjectEssentials-Backup/i
 
 [[mods]]
     modId="project_essentials_backup"
-    version="1.15.2-1.0.1"
+    version="${file.jarVersion}"
     displayName="Project Essentials Backup"
-    updateJSONURL="https://raw.githubusercontent.com/ProjectEssentials/ProjectEssentials-Backup/MC-1.15.2/update.json"
+    updateJSONURL="https://raw.githubusercontent.com/ProjectEssentials/ProjectEssentials-Backup/MC-1.15.2/updatev2.json"
     displayURL="https://github.com/ProjectEssentials/ProjectEssentials-Backup"
-    credits="Thanks JetBrains for Intellij IDEA license!"
+    credits="hujle, JetBrains, all forge developers, and other contributors"
     authors="MairwunNx (Pavel Erokhin)"
     description='''
-    Project Essentials Backup - additional module for Essentials;
-    Just make server and client world backup by time or via command.
+    Lightweight module for controlling the backup of the game world
+    and configuration files on the server and in a single world.
     '''
 
 [[dependencies.projectessentialsbackup]]
     modId="project_essentials_core"
     mandatory=true
-    versionRange="[1,)"
+    versionRange="[2,)"
     ordering="NONE"
     side="BOTH"
 
