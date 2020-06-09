@@ -22,7 +22,6 @@ import java.util.*
 import java.util.concurrent.CompletableFuture
 import kotlin.system.measureTimeMillis
 
-
 object BackupManager {
     private val logger = LogManager.getLogger()
     private val marker = MarkerManager.getMarker("BACKUP")
