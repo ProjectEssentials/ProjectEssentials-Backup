@@ -1,0 +1,7 @@
+{
+  "project_essentials_backup.restricted": "§c你 §7没有权限 §c使用此命令。",
+  "project_essentials_backup.notify": "§7§o备份游戏与服务器配置已完成。",
+  "project_essentials_backup.now.success": "§6成功创建备份。",
+  "project_essentials_backup.off.success": "§4自动备份已关闭。",
+  "project_essentials_backup.on.success": "§2自动备份已打开。"
+}
