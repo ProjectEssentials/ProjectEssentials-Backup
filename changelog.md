@@ -8,6 +8,11 @@ Since 2.0.0 versions change log same for all supported minecraft versions.
 
 ## [Unreleased]
 
+## [2.0.1] - 2020-06-20
+
+### Added
+- Chinese simplified localization by @KuroNoSeiHai.
+
 ## [2.0.0] - 2020-06-09
 
 ### Added
